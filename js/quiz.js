@@ -11,7 +11,6 @@ if (!firebase.apps.length) {
   };
   firebase.initializeApp(firebaseConfig);
 }
-const db = firebase.firestore();
 
 // === Ambil nama pengguna dan pelajaran ===
 const nama = localStorage.getItem("namaPengguna") || "Siswa";
