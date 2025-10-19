@@ -11,7 +11,6 @@ const firebaseConfig = {
 
 // === Inisialisasi Firebase ===
 firebase.initializeApp(firebaseConfig);
-const db = firebase.firestore();
 
 // === Ambil pelajaran dari URL ===
 const params = new URLSearchParams(window.location.search);
