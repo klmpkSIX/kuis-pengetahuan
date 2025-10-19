@@ -1,6 +1,6 @@
 // === Konfigurasi Firebase ===
 const firebaseConfig = {
-  apiKey: "AIzaSyCoPZ1se8vsj-ofFv-G4lXewKoC8shMfEA",
+  apiKey: "AIzaSyCoPZ1sse8vsj-ofFv-G4lXewKoC8shfMEA",
   authDomain: "kuis-pengetahuan-9816c.firebaseapp.com",
   projectId: "kuis-pengetahuan-9816c",
   storageBucket: "kuis-pengetahuan-9816c.firebasestorage.app",
@@ -9,7 +9,8 @@ const firebaseConfig = {
   measurementId: "G-T44R4GYSE5"
 };
 
-const app = firebase.initializeApp(firebaseConfig);
+// === Inisialisasi Firebase ===
+firebase.initializeApp(firebaseConfig);
 const db = firebase.firestore();
 
 // === Ambil pelajaran dari URL ===
@@ -24,34 +25,25 @@ const judulPelajaran = document.getElementById("judul-pelajaran");
 judulPelajaran.textContent = pelajaran ? pelajaran.toUpperCase() : "SEMUA PELAJARAN";
 
 // === Fungsi ambil data dari Firestore ===
-// === Ambil data leaderboard dari Firestore ===
-db.collection("leaderboard")
-  .orderBy("skor", "desc")
-  .limit(10)
-  .get()
-  .then(snapshot => {
-    const tbody = document.getElementById("data-leaderboard");
-    tbody.innerHTML = "";
+async function ambilLeaderboard() {
+  try {
+    let query = db.collection("leaderboard").orderBy("skor", "desc").limit(10);
 
-    snapshot.forEach((doc, index) => {
-      const data = doc.data();
-      const tr = document.createElement("tr");
+    // Jika ada parameter pelajaran, filter
+    if (pelajaran) {
+      query = db.collection("leaderboard")
+        .where("pelajaran", "==", pelajaran)
+        .orderBy("skor", "desc")
+        .limit(10);
+    }
 
-      let peringkat = index + 1;
-      let simbol = peringkat === 1 ? "🥇" : peringkat === 2 ? "🥈" : peringkat === 3 ? "🥉" : peringkat;
-
-      tr.innerHTML = `
-        <td>${simbol}</td>
-        <td>${data.nama}</td>
-        <td><strong>${data.skor}</strong></td>
-        <td>${data.durasi || "-"}</td>
-      `;
-      tbody.appendChild(tr);
-    });
-  })
-  .catch(error => {
+    const snapshot = await query.get();
+    const data = snapshot.docs.map(doc => doc.data());
+    tampilkanTabel(data);
+  } catch (error) {
     console.error("Gagal ambil data leaderboard:", error);
-  });
+  }
+}
 
 // === Fungsi tampilkan data ke tabel ===
 function tampilkanTabel(data) {
@@ -68,7 +60,7 @@ function tampilkanTabel(data) {
   data.forEach((item, index) => {
     const tr = document.createElement("tr");
 
-    // Tambahkan medali 1–3
+    // Medali 1–3
     let peringkat = index + 1;
     let simbol = "";
     if (peringkat === 1) simbol = "🥇";
@@ -83,19 +75,15 @@ function tampilkanTabel(data) {
       <td>${item.durasi || '-'}</td>
     `;
 
-    // Highlight pemain terakhir
     if (item.nama === pemainTerakhir) tr.classList.add("highlight");
-
     tbody.appendChild(tr);
   });
 }
 
-// === Jalankan ===
+// === Jalankan saat halaman dimuat ===
 ambilLeaderboard();
 
 // === Tombol kembali ===
 function kembali() {
   window.location.href = "index.html";
 }
-
-
