@@ -1,3 +1,18 @@
+// === Konfigurasi Firebase ===
+const firebaseConfig = {
+  apiKey: "AIzaSyCoPZ1sse8vsj-ofFv-G4lXewKoC8shfMEA",
+  authDomain: "kuis-pengetahuan-9816c.firebaseapp.com",
+  projectId: "kuis-pengetahuan-9816c",
+  storageBucket: "kuis-pengetahuan-9816c.firebasestorage.app",
+  messagingSenderId: "635876306787",
+  appId: "1:635876306787:web:86e5a4487628f75ec6ad56",
+  measurementId: "G-T44R4GYSE5"
+};
+
+// === Inisialisasi Firebase ===
+firebase.initializeApp(firebaseConfig);
+const db = firebase.firestore();
+
 // === Ambil nama pengguna dan pelajaran ===
 const nama = localStorage.getItem("namaPengguna") || "Siswa";
 document.getElementById("nama-user").textContent = `Nama: ${nama}`;
@@ -7,7 +22,7 @@ const pelajaran = params.get("pelajaran") || "matematika";
 document.getElementById("judul-pelajaran").textContent = pelajaran.toUpperCase();
 
 // === Variabel global ===
-let waktuTersisa = 300; // 5 menit
+let waktuTersisa = 300;
 let timerInterval;
 let waktuMulai;
 let waktuSelesai;
@@ -75,17 +90,13 @@ function tampilSoal() {
   const pertanyaan = document.getElementById("pertanyaan");
   const opsiContainer = document.getElementById("opsi-container");
 
-  // Cek apakah masih ada soal
   if (indexSoal >= soalData.length) {
     tampilHasil();
     return;
   }
 
   const q = soalData[indexSoal];
-
-  // Cegah error jika data rusak
-  if (!q || !(q.opsi || q.pilihan) || (q.opsi || q.pilihan).length === 0) {
-    console.error(`Soal ke-${indexSoal + 1} tidak valid, dilewati.`);
+  if (!q || !(q.opsi || q.pilihan)) {
     indexSoal++;
     tampilSoal();
     return;
@@ -93,23 +104,19 @@ function tampilSoal() {
 
   indikator.textContent = `Soal ${indexSoal + 1} dari ${soalData.length}`;
   pertanyaan.textContent = q.pertanyaan || q.soal;
-
   opsiContainer.innerHTML = "";
 
   (q.opsi || q.pilihan).forEach((teks, i) => {
     const btn = document.createElement("button");
     btn.textContent = teks;
-    btn.disabled = false;
-    btn.className = "";
     btn.onclick = () => periksaJawaban(i);
     opsiContainer.appendChild(btn);
   });
 
-  // pastikan tombol berikutnya disembunyikan dulu
   document.getElementById("btn-berikutnya").classList.add("hidden");
 }
 
-// === Cek jawaban ===
+// === Periksa jawaban ===
 function periksaJawaban(i) {
   const q = soalData[indexSoal];
   const benarIndex = typeof q.jawaban === "number"
@@ -123,32 +130,22 @@ function periksaJawaban(i) {
     btn.disabled = true;
   });
 
-  // === Suara dan skor ===
   if (i === benarIndex) {
     skor++;
     waktuTersisa += 2;
-    suaraBenar.currentTime = 0;
     suaraBenar.play();
   } else {
-    suaraSalah.currentTime = 0;
     suaraSalah.play();
   }
 
-  // === Tampilkan tombol berikutnya ===
   document.getElementById("btn-berikutnya").classList.remove("hidden");
 }
 
 function soalBerikutnya() {
   indexSoal++;
-
-  // Sembunyikan tombol berikutnya
   document.getElementById("btn-berikutnya").classList.add("hidden");
-
-  if (indexSoal < soalData.length) {
-    tampilSoal(); // tampilkan soal baru
-  } else {
-    tampilHasil();
-  }
+  if (indexSoal < soalData.length) tampilSoal();
+  else tampilHasil();
 }
 
 // === Hasil akhir ===
@@ -169,7 +166,7 @@ function tampilHasil() {
   simpanSkor(nama, pelajaran, nilaiAkhir, soalData.length, waktuPengerjaan);
 }
 
-// === Simpan skor ===
+// === Simpan skor ke Firestore ===
 async function simpanSkor(nama, pelajaran, skor, total, durasi) {
   try {
     await db.collection("leaderboard").add({
@@ -180,9 +177,9 @@ async function simpanSkor(nama, pelajaran, skor, total, durasi) {
       durasi: durasi,
       waktu: new Date().toLocaleString()
     });
-    console.log("Skor tersimpan di Firestore ✅");
+    console.log("✅ Skor tersimpan di Firestore!");
   } catch (e) {
-    console.error("Gagal menyimpan skor:", e);
+    console.error("❌ Gagal menyimpan skor:", e);
   }
 }
 
@@ -193,4 +190,3 @@ function kembaliDashboard() {
 function lihatLeaderboard() {
   window.location.href = `leaderboard.html?pelajaran=${pelajaran}`;
 }
-
