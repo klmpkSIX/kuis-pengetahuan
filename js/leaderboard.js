@@ -67,6 +67,7 @@ function tampilkanLeaderboard(data) {
       <td>${item.durasi || '-'}</td>
     `;
     if (pemainTerakhir && item.nama === pemainTerakhir) {
+      tr.style.backgroundColor = "#918f18ff";
     }
     tbody.appendChild(tr);
   });
@@ -79,4 +80,5 @@ ambilLeaderboard();
 function kembali() {
   window.location.href = "index.html";
 }
+
 
