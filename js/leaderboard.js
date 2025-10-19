@@ -1,6 +1,8 @@
+// Ambil parameter dari URL
 const params = new URLSearchParams(window.location.search);
-const pelajaran = params.get("pelajaran") || "Semua Pelajaran";
-document.getElementById("judul-pelajaran").textContent = pelajaran.toUpperCase();
+const pelajaran = (params.get("pelajaran") || "Semua Pelajaran").toLowerCase();
+document.getElementById("judul-pelajaran").textContent =
+  pelajaran === "semua pelajaran" ? "SEMUA PELAJARAN" : pelajaran.toUpperCase();
 
 const pemainTerakhir = localStorage.getItem("namaPengguna") || null;
 
@@ -8,24 +10,38 @@ const pemainTerakhir = localStorage.getItem("namaPengguna") || null;
 function ambilLeaderboard() {
   let query;
 
-  if (pelajaran && pelajaran !== "Semua Pelajaran") {
-    // tanpa orderBy untuk hindari error index
+  // Kalau pelajaran spesifik
+  if (pelajaran && pelajaran !== "semua pelajaran") {
     query = db.collection("leaderboard")
-      .where("pelajaran", "==", pelajaran)
+      .where("pelajaran", "==", pelajaran) // cocokkan huruf kecil
       .limit(10);
   } else {
-    // kalau semua pelajaran, boleh urutkan
     query = db.collection("leaderboard")
       .orderBy("skor", "desc")
       .limit(10);
   }
 
   query.get().then(snapshot => {
-    const data = snapshot.docs.map(doc => doc.data());
-    // urutkan manual kalau pakai where
-    if (pelajaran && pelajaran !== "Semua Pelajaran") {
+    let data = snapshot.docs.map(doc => doc.data());
+
+    // Jika hasil kosong, ambil semua data agar tetap tampil
+    if (data.length === 0 && pelajaran !== "semua pelajaran") {
+      console.warn("Tidak ada data cocok, ambil semua leaderboard...");
+      db.collection("leaderboard")
+        .orderBy("skor", "desc")
+        .limit(10)
+        .get()
+        .then(snapAll => {
+          tampilkanLeaderboard(snapAll.docs.map(doc => doc.data()));
+        });
+      return;
+    }
+
+    // Urutkan manual kalau pakai where
+    if (pelajaran && pelajaran !== "semua pelajaran") {
       data.sort((a, b) => b.skor - a.skor);
     }
+
     tampilkanLeaderboard(data);
   }).catch(err => {
     console.error("❌ Gagal ambil data leaderboard:", err);
@@ -57,9 +73,10 @@ function tampilkanLeaderboard(data) {
   });
 }
 
+// Jalankan saat halaman dibuka
 ambilLeaderboard();
 
+// Tombol kembali
 function kembali() {
   window.location.href = "index.html";
 }
-
