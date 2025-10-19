@@ -170,27 +170,19 @@ function tampilHasil() {
 }
 
 // === Simpan skor ===
-function simpanSkor(nama, pelajaran, skor, total, durasi) {
-  const dataSkor = JSON.parse(localStorage.getItem("leaderboardData")) || [];
-  const hasilBaru = { nama, pelajaran, skor, total, waktu: new Date().toLocaleString(), durasi };
-
-  dataSkor.push(hasilBaru);
-  dataSkor.sort((a, b) => b.skor - a.skor);
-
-  const pelajaranList = [...new Set(dataSkor.map(i => i.pelajaran))];
-  let dataFinal = [];
-  pelajaranList.forEach(pel => {
-    dataFinal = dataFinal.concat(
-      dataSkor.filter(i => i.pelajaran === pel).slice(0, 10)
-    );
-  });
-
-  localStorage.setItem("leaderboardData", JSON.stringify(dataFinal));
-
-  const posisi = dataFinal.filter(i => i.pelajaran === pelajaran)
-    .findIndex(i => i.nama === nama) + 1;
-  if (posisi > 0 && posisi <= 10) {
-    alert(`🎉 Selamat ${nama}! Kamu masuk ${posisi <= 3 ? "peringkat " + posisi + " besar" : "10 besar"} di ${pelajaran.toUpperCase()}!`);
+async function simpanSkor(nama, pelajaran, skor, total, durasi) {
+  try {
+    await db.collection("leaderboard").add({
+      nama: nama,
+      pelajaran: pelajaran,
+      skor: skor,
+      total: total,
+      durasi: durasi,
+      waktu: new Date().toLocaleString()
+    });
+    console.log("Skor tersimpan di Firestore ✅");
+  } catch (e) {
+    console.error("Gagal menyimpan skor:", e);
   }
 }
 
@@ -201,3 +193,4 @@ function kembaliDashboard() {
 function lihatLeaderboard() {
   window.location.href = `leaderboard.html?pelajaran=${pelajaran}`;
 }
+
