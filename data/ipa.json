@@ -1,0 +1,22 @@
+[
+  {"pertanyaan": "Matahari adalah ...", "opsi": ["Planet", "Bintang", "Satelit", "Awan"], "jawaban": 1},
+  {"pertanyaan": "Tumbuhan membuat makanan melalui proses ...", "opsi": ["Fotosintesis", "Respirasi", "Fermentasi", "Transpirasi"], "jawaban": 0},
+  {"pertanyaan": "Air berubah menjadi uap disebut ...", "opsi": ["Menguap", "Membeku", "Mengembun", "Menyublim"], "jawaban": 0},
+  {"pertanyaan": "Bagian tumbuhan yang berfungsi menyerap air adalah ...", "opsi": ["Akar", "Batang", "Daun", "Bunga"], "jawaban": 0},
+  {"pertanyaan": "Alat pernapasan manusia adalah ...", "opsi": ["Hidung", "Jantung", "Paru-paru", "Lambung"], "jawaban": 2},
+  {"pertanyaan": "Bagian tumbuhan yang berfungsi menghasilkan bunga adalah ...", "opsi": ["Akar", "Batang", "Daun", "Bunga"], "jawaban": 3},
+  {"pertanyaan": "Benda yang dapat ditarik magnet disebut ...", "opsi": ["Nonmagnetik", "Magnetik", "Logam berat", "Kayu"], "jawaban": 1},
+  {"pertanyaan": "Perubahan wujud dari padat menjadi cair disebut ...", "opsi": ["Menguap", "Mencair", "Menyublim", "Membeku"], "jawaban": 1},
+  {"pertanyaan": "Sumber energi utama di bumi adalah ...", "opsi": ["Air", "Matahari", "Angin", "Batu bara"], "jawaban": 1},
+  {"pertanyaan": "Manusia bernafas menggunakan ...", "opsi": ["Kulit", "Insang", "Paru-paru", "Rongga"], "jawaban": 2},
+  {"pertanyaan": "Contoh energi panas alami adalah ...", "opsi": ["Kompor", "Lilin", "Matahari", "Listrik"], "jawaban": 2},
+  {"pertanyaan": "Bagian tumbuhan yang berfungsi fotosintesis adalah ...", "opsi": ["Batang", "Akar", "Daun", "Bunga"], "jawaban": 2},
+  {"pertanyaan": "Air hujan termasuk perubahan wujud ...", "opsi": ["Menguap", "Membeku", "Mengembun", "Menyublim"], "jawaban": 2},
+  {"pertanyaan": "Gigi yang berfungsi memotong makanan adalah ...", "opsi": ["Taring", "Geraham", "Seri", "Tombak"], "jawaban": 2},
+  {"pertanyaan": "Bagian bumi tempat makhluk hidup tinggal adalah ...", "opsi": ["Atmosfer", "Litosfer", "Hidrosfer", "Biosfer"], "jawaban": 3},
+  {"pertanyaan": "Kupu-kupu berkembang biak dengan ...", "opsi": ["Bertelur", "Melahirkan", "Membelah diri", "Berpupa"], "jawaban": 0},
+  {"pertanyaan": "Benda yang mengapung di air memiliki massa jenis ...", "opsi": ["Lebih besar", "Lebih kecil", "Sama", "Tidak tentu"], "jawaban": 1},
+  {"pertanyaan": "Wujud air di udara disebut ...", "opsi": ["Uap air", "Embun", "Awan", "Kabut"], "jawaban": 0},
+  {"pertanyaan": "Binatang yang termasuk mamalia adalah ...", "opsi": ["Ikan", "Katak", "Kelelawar", "Ayam"], "jawaban": 2},
+  {"pertanyaan": "Tumbuhan yang hidup di air disebut ...", "opsi": ["Hidrofit", "Epifit", "Terestrial", "Mangrove"], "jawaban": 0}
+]

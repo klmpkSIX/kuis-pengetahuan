@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Papan Peringkat - Test Pengetahuan SD</title>
+  <link rel="stylesheet" href="css/leaderboard.css">
+</head>
+<body>
+  <div class="leaderboard-container">
+    <h1>Papan Peringkat <span id="judul-pelajaran">Semua Pelajaran</span> 🏆</h1>
+
+    <table id="leaderboard">
+      <thead>
+        <tr>
+          <th>Peringkat</th>
+          <th>Nama</th>
+          <th>Nilai Akhir</th>
+          <th>Durasi (detik)</th>
+        </tr>
+      </thead>
+      <tbody id="data-leaderboard"></tbody>
+    </table>
+
+    <button onclick="kembali()">Kembali ke Dashboard</button>
+  </div>
+
+  <script src="js/leaderboard.js"></script>
+</body>
+</html>

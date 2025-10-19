@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard - Test Pengetahuan SD</title>
+  <link rel="stylesheet" href="css/dashboard.css">
+</head>
+<body>
+  <nav class="navbar">
+    <h2>Hai, <span id="nama-user"></span> 👋</h2>
+    <button class="logout" onclick="logout()">Keluar</button>
+  </nav>
+
+  <section class="welcome">
+    <h1>Selamat Datang di Dashboard</h1>
+    <p>Pilih mata pelajaran yang ingin kamu uji hari ini</p>
+  </section>
+
+  <main class="subject-container">
+    <div class="card" onclick="bukaPelajaran('matematika')">
+      <div class="icon">📘</div>
+      <h3>Matematika</h3>
+      <p>Latih kemampuan berhitung dan logika kamu.</p>
+    </div>
+
+    <div class="card" onclick="bukaPelajaran('ipa')">
+      <div class="icon">🔬</div>
+      <h3>IPA</h3>
+      <p>Pelajari sains dan alam sekitar dengan seru.</p>
+    </div>
+
+    <div class="card" onclick="bukaPelajaran('ips')">
+      <div class="icon">🌍</div>
+      <h3>IPS</h3>
+      <p>Kenali dunia, sejarah, dan lingkungan sosialmu.</p>
+    </div>
+
+    <div class="card" onclick="bukaPelajaran('bahasa')">
+      <div class="icon">📝</div>
+      <h3>Bahasa Indonesia</h3>
+      <p>Tingkatkan kemampuan membaca dan menulis.</p>
+    </div>
+
+    <div class="card" onclick="bukaPelajaran('ppkn')">
+      <div class="icon">🇮🇩</div>
+      <h3>PPKN</h3>
+      <p>Belajar nilai-nilai kebangsaan dan moral.</p>
+    </div>
+  </main>
+
+  <script src="js/dashboard.js"></script>
+</body>
+</html>

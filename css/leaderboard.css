@@ -1,0 +1,159 @@
+/* === Reset & dasar === */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
+  min-height: 100vh;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+}
+
+/* === Kontainer utama === */
+.leaderboard-container {
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(12px);
+  border-radius: 20px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+  padding: 40px 30px;
+  width: 95%;
+  max-width: 900px;
+  text-align: center;
+  animation: fadeIn 1s ease;
+}
+
+/* === Judul === */
+.leaderboard-container h1 {
+  font-size: 2rem;
+  margin-bottom: 25px;
+  color: #fff;
+  font-weight: 700;
+}
+
+#judul-pelajaran {
+  color: #ffd76b;
+}
+
+/* === Tabel === */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 25px;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+thead {
+  background: rgba(255, 255, 255, 0.25);
+  color: #fff;
+}
+
+thead th {
+  padding: 12px 8px;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+tbody tr {
+  background: rgba(255, 255, 255, 0.1);
+  transition: 0.3s ease;
+}
+
+tbody tr:nth-child(even) {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+tbody tr:hover {
+  background: rgba(255, 255, 255, 0.25);
+  transform: scale(1.01);
+}
+
+tbody td {
+  padding: 12px 8px;
+  font-size: 0.95rem;
+  color: #fff;
+}
+
+/* === Medali 3 besar === */
+tbody tr:first-child td:first-child {
+  color: #ffd700; /* emas */
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+tbody tr:nth-child(2) td:first-child {
+  color: #c0c0c0; /* perak */
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+tbody tr:nth-child(3) td:first-child {
+  color: #cd7f32; /* perunggu */
+  font-weight: bold;
+  font-size: 1.05rem;
+}
+
+/* === Highlight pemain terakhir === */
+.highlight {
+  background: rgba(255, 255, 255, 0.3) !important;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.4);
+}
+
+/* === Rata-rata nilai === */
+#rata-rata {
+  font-size: 1rem;
+  margin-bottom: 20px;
+  color: #e0e0e0;
+}
+
+/* === Tombol kembali === */
+button {
+  padding: 12px 25px;
+  border: none;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #ffb347, #ffcc33);
+  color: #222;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  background: linear-gradient(135deg, #ffd76b, #ffe680);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(255, 255, 255, 0.25);
+}
+
+/* === Animasi === */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* === Responsif === */
+@media (max-width: 600px) {
+  .leaderboard-container {
+    padding: 25px 15px;
+  }
+
+  table {
+    font-size: 0.9rem;
+  }
+
+  thead th, tbody td {
+    padding: 10px 5px;
+  }
+
+  .leaderboard-container h1 {
+    font-size: 1.6rem;
+  }
+}

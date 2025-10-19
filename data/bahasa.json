@@ -1,0 +1,22 @@
+[
+  {"pertanyaan": "Sinonim dari kata 'besar' adalah ...", "opsi": ["Kecil", "Gede", "Pendek", "Tinggi"], "jawaban": 1},
+  {"pertanyaan": "Antonim dari kata 'panas' adalah ...", "opsi": ["Hangat", "Dingin", "Sejuk", "Basah"], "jawaban": 1},
+  {"pertanyaan": "Kalimat tanya diakhiri dengan tanda ...", "opsi": ["Titik", "Seru", "Koma", "Tanya"], "jawaban": 3},
+  {"pertanyaan": "Huruf kapital digunakan pada ...", "opsi": ["Nama orang", "Kata benda", "Kata kerja", "Kata sifat"], "jawaban": 0},
+  {"pertanyaan": "Kata 'berlari' termasuk jenis kata ...", "opsi": ["Benda", "Kerja", "Sifat", "Keterangan"], "jawaban": 1},
+  {"pertanyaan": "Kata yang memiliki makna berlawanan disebut ...", "opsi": ["Sinonim", "Antonim", "Homofon", "Polisemi"], "jawaban": 1},
+  {"pertanyaan": "Kata 'cantik' sinonim dengan ...", "opsi": ["Manis", "Jelek", "Buruk", "Kotor"], "jawaban": 0},
+  {"pertanyaan": "Antonim dari 'gelap' adalah ...", "opsi": ["Terang", "Panas", "Hitam", "Dingin"], "jawaban": 0},
+  {"pertanyaan": "Kalimat perintah diakhiri dengan tanda ...", "opsi": ["Titik", "Seru", "Koma", "Tanya"], "jawaban": 1},
+  {"pertanyaan": "Kata 'rumah' termasuk kata ...", "opsi": ["Kerja", "Benda", "Sifat", "Keterangan"], "jawaban": 1},
+  {"pertanyaan": "Kata 'tinggi' termasuk kata ...", "opsi": ["Kerja", "Benda", "Sifat", "Keterangan"], "jawaban": 2},
+  {"pertanyaan": "Antonim dari 'cepat' adalah ...", "opsi": ["Lambat", "Rajin", "Tinggi", "Jauh"], "jawaban": 0},
+  {"pertanyaan": "Kata 'guru' termasuk jenis kata ...", "opsi": ["Sifat", "Kerja", "Benda", "Keterangan"], "jawaban": 2},
+  {"pertanyaan": "Tanda baca yang digunakan pada akhir kalimat berita adalah ...", "opsi": ["Titik", "Koma", "Seru", "Tanya"], "jawaban": 0},
+  {"pertanyaan": "Kata 'indah' memiliki sinonim ...", "opsi": ["Bagus", "Kotor", "Buruk", "Aneh"], "jawaban": 0},
+  {"pertanyaan": "Antonim dari 'malas' adalah ...", "opsi": ["Rajin", "Santai", "Tenang", "Lambat"], "jawaban": 0},
+  {"pertanyaan": "Kata 'pintar' sinonimnya adalah ...", "opsi": ["Cerdas", "Lupa", "Bodoh", "Lelah"], "jawaban": 0},
+  {"pertanyaan": "Kalimat yang menyatakan ajakan adalah ...", "opsi": ["Ayo belajar bersama!", "Dia sedang makan", "Rumah itu besar", "Apakah kamu lapar?"], "jawaban": 0},
+  {"pertanyaan": "Kata 'merah' termasuk jenis kata ...", "opsi": ["Kerja", "Benda", "Sifat", "Keterangan"], "jawaban": 2},
+  {"pertanyaan": "Antonim dari 'tinggi' adalah ...", "opsi": ["Rendah", "Panjang", "Lebar", "Dalam"], "jawaban": 0}
+]

@@ -1,0 +1,156 @@
+/* === Reset & font dasar === */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  color: #fff;
+  overflow: hidden;
+}
+
+/* === Container utama === */
+.container {
+  text-align: center;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(12px);
+  border-radius: 20px;
+  padding: 50px 40px;
+  width: 90%;
+  max-width: 420px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
+  animation: fadeIn 1s ease;
+}
+
+/* === Judul & Subjudul === */
+.container h1 {
+  font-size: 2.2rem;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+  color: #fff;
+  font-weight: 700;
+}
+
+.subtitle {
+  font-size: 1rem;
+  margin-bottom: 30px;
+  color: #e0e0e0;
+}
+
+/* === Kartu login === */
+.login-card {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.2);
+  transition: 0.3s;
+}
+
+.login-card:hover {
+  transform: scale(1.02);
+}
+
+/* === Ikon user === */
+.icon {
+  font-size: 3rem;
+  margin-bottom: 10px;
+  animation: float 2s infinite ease-in-out;
+}
+
+/* === Teks dan input === */
+.login-card h2 {
+  margin-bottom: 5px;
+  font-size: 1.4rem;
+  color: #fff;
+}
+
+.desc {
+  font-size: 0.9rem;
+  color: #d1d1d1;
+  margin-bottom: 20px;
+}
+
+/* === Input nama === */
+input {
+  width: 100%;
+  padding: 12px 15px;
+  margin-bottom: 20px;
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  outline: none;
+  text-align: center;
+  color: #333;
+}
+
+input::placeholder {
+  color: #aaa;
+}
+
+/* === Tombol masuk === */
+button {
+  width: 100%;
+  padding: 12px;
+  background: linear-gradient(135deg, #ffb347, #ffcc33);
+  border: none;
+  border-radius: 10px;
+  color: #222;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 1rem;
+}
+
+button:hover {
+  background: linear-gradient(135deg, #ffd76b, #ffe680);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(255, 255, 255, 0.2);
+}
+
+/* === Link leaderboard === */
+.link {
+  display: inline-block;
+  margin-top: 15px;
+  color: #fff;
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: 0.3s;
+}
+
+.link:hover {
+  color: #ffd76b;
+  text-decoration: underline;
+}
+
+/* === Animasi === */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+/* === Responsif === */
+@media (max-width: 480px) {
+  .container {
+    padding: 30px 25px;
+  }
+
+  .container h1 {
+    font-size: 1.7rem;
+  }
+
+  .login-card h2 {
+    font-size: 1.2rem;
+  }
+}

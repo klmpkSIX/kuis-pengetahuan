@@ -1,0 +1,22 @@
+[
+  {"pertanyaan": "Ibukota Indonesia adalah ...", "opsi": ["Surabaya", "Bandung", "Jakarta", "Medan"], "jawaban": 2},
+  {"pertanyaan": "Pulau terbesar di Indonesia adalah ...", "opsi": ["Sumatra", "Jawa", "Kalimantan", "Sulawesi"], "jawaban": 2},
+  {"pertanyaan": "Mata uang Indonesia adalah ...", "opsi": ["Ringgit", "Dollar", "Rupiah", "Baht"], "jawaban": 2},
+  {"pertanyaan": "Gunung tertinggi di Indonesia adalah ...", "opsi": ["Semeru", "Rinjani", "Jayawijaya", "Kerinci"], "jawaban": 2},
+  {"pertanyaan": "Benua terbesar di dunia adalah ...", "opsi": ["Eropa", "Asia", "Afrika", "Australia"], "jawaban": 1},
+  {"pertanyaan": "Indonesia terletak di antara dua benua yaitu ...", "opsi": ["Asia dan Australia", "Afrika dan Amerika", "Asia dan Afrika", "Eropa dan Australia"], "jawaban": 0},
+  {"pertanyaan": "Pekerjaan utama penduduk di daerah pantai adalah ...", "opsi": ["Petani", "Nelayan", "Peternak", "Penambang"], "jawaban": 1},
+  {"pertanyaan": "Rumah adat dari Jawa Barat adalah ...", "opsi": ["Joglo", "Panggung", "Baduy", "Sunda"], "jawaban": 3},
+  {"pertanyaan": "Hari Kemerdekaan Indonesia diperingati setiap ...", "opsi": ["1 Juni", "17 Agustus", "10 November", "20 Mei"], "jawaban": 1},
+  {"pertanyaan": "Transportasi tradisional di air disebut ...", "opsi": ["Sepeda", "Mobil", "Perahu", "Kereta"], "jawaban": 2},
+  {"pertanyaan": "Provinsi paling timur Indonesia adalah ...", "opsi": ["Papua", "Maluku", "NTT", "Sulawesi"], "jawaban": 0},
+  {"pertanyaan": "Pulau Bali terkenal dengan ...", "opsi": ["Gunung", "Pantai", "Hutan", "Gurun"], "jawaban": 1},
+  {"pertanyaan": "Mata pencaharian penduduk di pegunungan adalah ...", "opsi": ["Petani", "Nelayan", "Penjahit", "Pedagang"], "jawaban": 0},
+  {"pertanyaan": "Candi Borobudur terletak di provinsi ...", "opsi": ["Jawa Timur", "Jawa Tengah", "Jawa Barat", "Banten"], "jawaban": 1},
+  {"pertanyaan": "Alat pembayaran yang sah di Indonesia adalah ...", "opsi": ["Kartu kredit", "Rupiah", "Emas", "Dollar"], "jawaban": 1},
+  {"pertanyaan": "Pulau Komodo terletak di provinsi ...", "opsi": ["NTB", "NTT", "Bali", "Papua"], "jawaban": 1},
+  {"pertanyaan": "Danau Toba terletak di pulau ...", "opsi": ["Kalimantan", "Sumatra", "Sulawesi", "Papua"], "jawaban": 1},
+  {"pertanyaan": "Gunung Merapi terletak di provinsi ...", "opsi": ["Jawa Barat", "Jawa Tengah", "Jawa Timur", "Bali"], "jawaban": 1},
+  {"pertanyaan": "Sungai terpanjang di Indonesia adalah ...", "opsi": ["Kapuas", "Musik", "Musi", "Mahakam"], "jawaban": 0},
+  {"pertanyaan": "Provinsi yang terkenal dengan batik Pekalongan adalah ...", "opsi": ["Jawa Tengah", "Jawa Timur", "Bali", "NTT"], "jawaban": 0}
+]

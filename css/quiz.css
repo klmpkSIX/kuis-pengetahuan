@@ -1,0 +1,254 @@
+/* === Reset & Font Dasar === */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  overflow-x: hidden;
+}
+
+/* === Container Utama === */
+.quiz-container {
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+  width: 90%;
+  max-width: 700px;
+  padding: 40px 30px;
+  text-align: center;
+  animation: fadeIn 1s ease;
+}
+
+/* === Timer === */
+#timer {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #ffea70;
+  text-align: right;
+  margin-bottom: 10px;
+  animation: pulse 2s infinite ease-in-out;
+}
+
+/* === Header === */
+header {
+  margin-bottom: 30px;
+}
+
+header h1 {
+  font-size: 2rem;
+  color: #fff;
+  margin-bottom: 5px;
+}
+
+header p {
+  color: #e0e0e0;
+  font-size: 1rem;
+}
+
+/* === Area Soal === */
+#quiz-box {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.15);
+  transition: 0.3s ease;
+}
+
+#pertanyaan {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+  font-weight: 500;
+}
+
+/* === Tombol Jawaban === */
+#opsi-container {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+#opsi-container button {
+  background: linear-gradient(135deg, #ffb347, #ffcc33);
+  border: none;
+  border-radius: 10px;
+  padding: 12px;
+  color: #222;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+#opsi-container button:hover {
+  background: linear-gradient(135deg, #ffd76b, #ffe680);
+  transform: translateY(-3px);
+  box-shadow: 0 4px 15px rgba(255, 255, 255, 0.25);
+}
+
+/* === Hasil Akhir === */
+#hasil {
+  margin-top: 20px;
+  background: rgba(255, 255, 255, 0.15);
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: inset 0 0 15px rgba(255, 255, 255, 0.2);
+}
+
+#hasil h1 {
+  margin-bottom: 15px;
+  color: #fff;
+}
+
+#hasil p {
+  font-size: 1rem;
+  margin: 8px 0;
+  color: #e8e8e8;
+}
+
+/* === Tombol Navigasi Hasil === */
+#hasil button {
+  margin-top: 15px;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #ffb347, #ffcc33);
+  color: #222;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+#hasil button:hover {
+  background: linear-gradient(135deg, #ffd76b, #ffe680);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(255, 255, 255, 0.25);
+}
+
+.benar {
+  background-color: #4caf50 !important;
+  color: white;
+  transform: scale(1.05);
+  transition: 0.3s ease;
+}
+
+.salah {
+  background-color: #f44336 !important;
+  color: white;
+  transform: scale(0.95);
+  transition: 0.3s ease;
+}
+
+/* === Indikator Soal di Atas === */
+.indikator-top {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #ffe97f;
+  margin-top: 10px;
+  margin-bottom: 15px;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.12);
+  padding: 8px 14px;
+  border-radius: 10px;
+  display: inline-block;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+  animation: fadeIn 0.6s ease;
+}
+
+/* === Tombol “Soal Berikutnya” === */
+.nav-area {
+  margin-top: 25px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+#btn-berikutnya {
+  background: linear-gradient(135deg, #00c6ff, #0072ff);
+  border: none;
+  border-radius: 12px;
+  color: white;
+  font-weight: 600;
+  font-size: 1rem;
+  padding: 12px 25px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
+}
+
+#btn-berikutnya:hover {
+  transform: translateY(-3px);
+  background: linear-gradient(135deg, #4facfe, #00f2fe);
+  box-shadow: 0 6px 20px rgba(255, 255, 255, 0.3);
+}
+
+#btn-berikutnya:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* === Tombol disembunyikan === */
+.hidden {
+  display: none;
+}
+
+/* === Efek animasi muncul halus === */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* === Utility === */
+.hidden {
+  display: none;
+}
+
+/* === Animasi === */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.6;
+  }
+}
+
+/* === Responsif === */
+@media (max-width: 600px) {
+  .quiz-container {
+    padding: 25px 20px;
+  }
+
+  header h1 {
+    font-size: 1.6rem;
+  }
+
+  #pertanyaan {
+    font-size: 1rem;
+  }
+
+  #opsi-container button {
+    font-size: 0.9rem;
+    padding: 10px;
+  }
+}

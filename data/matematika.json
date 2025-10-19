@@ -1,0 +1,22 @@
+[
+  {"pertanyaan": "5 + 3 = ?", "opsi": ["6", "7", "8", "9"], "jawaban": 2},
+  {"pertanyaan": "12 - 5 = ?", "opsi": ["5", "6", "7", "8"], "jawaban": 2},
+  {"pertanyaan": "4 × 3 = ?", "opsi": ["7", "10", "12", "14"], "jawaban": 2},
+  {"pertanyaan": "15 ÷ 3 = ?", "opsi": ["3", "4", "5", "6"], "jawaban": 2},
+  {"pertanyaan": "10 + 9 = ?", "opsi": ["17", "18", "19", "20"], "jawaban": 2},
+  {"pertanyaan": "100 - 55 = ?", "opsi": ["40", "45", "50", "55"], "jawaban": 1},
+  {"pertanyaan": "7 × 6 = ?", "opsi": ["36", "42", "48", "56"], "jawaban": 1},
+  {"pertanyaan": "64 ÷ 8 = ?", "opsi": ["6", "7", "8", "9"], "jawaban": 2},
+  {"pertanyaan": "9 + 9 = ?", "opsi": ["16", "17", "18", "19"], "jawaban": 2},
+  {"pertanyaan": "25 + 15 = ?", "opsi": ["35", "40", "45", "50"], "jawaban": 1},
+  {"pertanyaan": "6 × 9 = ?", "opsi": ["45", "52", "54", "56"], "jawaban": 2},
+  {"pertanyaan": "72 ÷ 9 = ?", "opsi": ["6", "7", "8", "9"], "jawaban": 2},
+  {"pertanyaan": "20% dari 100 adalah ...", "opsi": ["10", "15", "20", "25"], "jawaban": 2},
+  {"pertanyaan": "1 meter = ... cm", "opsi": ["10", "100", "1000", "10000"], "jawaban": 1},
+  {"pertanyaan": "Bangun yang memiliki 4 sisi sama panjang adalah ...", "opsi": ["Persegi", "Segitiga", "Lingkaran", "Trapesium"], "jawaban": 0},
+  {"pertanyaan": "7 + 6 + 5 = ?", "opsi": ["16", "17", "18", "19"], "jawaban": 2},
+  {"pertanyaan": "Bilangan genap setelah 28 adalah ...", "opsi": ["29", "30", "31", "32"], "jawaban": 1},
+  {"pertanyaan": "Penyebut pecahan 3/4 adalah ...", "opsi": ["3", "4", "7", "1"], "jawaban": 1},
+  {"pertanyaan": "Luas persegi dengan sisi 5 cm adalah ...", "opsi": ["20", "25", "30", "35"], "jawaban": 1},
+  {"pertanyaan": "Hasil dari 45 ÷ 5 adalah ...", "opsi": ["8", "9", "10", "11"], "jawaban": 1}
+]

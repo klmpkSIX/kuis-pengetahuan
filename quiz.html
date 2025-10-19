@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Kuis Pengetahuan SD - Seru dan interaktif!" />
+  <title>Kuis Pengetahuan SD</title>
+  <link rel="stylesheet" href="css/quiz.css" />
+</head>
+<body>
+  <div class="quiz-container">
+
+    <!-- Header + Timer -->
+    <header>
+      <div class="top-bar">
+        <h1 id="judul-pelajaran">KUIS</h1>
+        <div class="info-area">
+          <p id="nama-user"></p>
+          <h2 id="timer">Waktu: 5:00</h2>
+        </div>
+      </div>
+      <!-- Pindahkan indikator ke sini -->
+      <p id="indikator-soal" class="indikator-top"></p>
+    </header>
+
+    <!-- Kotak Kuis -->
+    <div id="quiz-box">
+      <p id="pertanyaan"></p>
+      <div id="opsi-container"></div>
+      <div class="nav-area">
+        <button id="btn-berikutnya" class="hidden" onclick="soalBerikutnya()">Soal Berikutnya ➜</button>
+      </div>
+    </div>
+
+    <!-- Hasil -->
+    <div id="hasil" class="hidden">
+      <h1>Hasil Kuis</h1>
+      <p>Skor Benar: <span id="skor"></span></p>
+      <p>Waktu Pengerjaan: <span id="waktu-akhir"></span></p>
+      <p>Nilai Akhir: <span id="nilai-akhir"></span></p>
+      <button onclick="lihatLeaderboard()">📊 Lihat Papan Peringkat</button>
+      <button onclick="kembaliDashboard()">🏠 Kembali ke Dashboard</button>
+    </div>
+  </div>
+
+  <!-- Suara -->
+  <audio id="suara-benar" src="audio/benar.mp3" preload="auto"></audio>
+  <audio id="suara-salah" src="audio/salah.mp3" preload="auto"></audio>
+
+  <script src="js/quiz.js" defer></script>
+</body>
+</html>
