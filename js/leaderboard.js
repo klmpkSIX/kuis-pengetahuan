@@ -1,29 +1,29 @@
-// === Konfigurasi Firebase ===
+// === Inisialisasi Firebase ===
 const firebaseConfig = {
   apiKey: "AIzaSyCoPZ1sse8vsj-ofFv-G4lXewKoC8shfMEA",
   authDomain: "kuis-pengetahuan-9816c.firebaseapp.com",
   projectId: "kuis-pengetahuan-9816c",
-  storageBucket: "kuis-pengetahuan-9816c.firebasestorage.app",
+  storageBucket: "kuis-pengetahuan-9816c.appspot.com",
   messagingSenderId: "635876306787",
   appId: "1:635876306787:web:86e5a4487628f75ec6ad56",
   measurementId: "G-T44R4GYSE5"
 };
 
-// === Inisialisasi Firebase ===
 firebase.initializeApp(firebaseConfig);
+const db = firebase.firestore();
 
 // === Ambil pelajaran dari URL ===
 const params = new URLSearchParams(window.location.search);
 const pelajaran = params.get("pelajaran");
 
-// === Nama pemain terakhir dari kuis ===
+// === Nama pemain terakhir ===
 const pemainTerakhir = localStorage.getItem("namaPengguna");
 
 // === Tampilkan judul pelajaran ===
 const judulPelajaran = document.getElementById("judul-pelajaran");
 judulPelajaran.textContent = pelajaran ? pelajaran.toUpperCase() : "SEMUA PELAJARAN";
 
-// === Fungsi ambil data dari Firestore ===
+// === Ambil data dari Firestore ===
 function ambilLeaderboard() {
   let query = db.collection("leaderboard").orderBy("skor", "desc").limit(10);
 
@@ -34,15 +34,17 @@ function ambilLeaderboard() {
       .limit(10);
   }
 
-  query.get().then(snapshot => {
-    const data = snapshot.docs.map(doc => doc.data());
-    tampilkanTabel(data);
-  }).catch(err => {
-    console.error("Gagal mengambil data:", err);
-  });
+  query.get()
+    .then(snapshot => {
+      const data = snapshot.docs.map(doc => doc.data());
+      tampilkanTabel(data);
+    })
+    .catch(err => {
+      console.error("Gagal mengambil data:", err);
+    });
 }
 
-// === Tampilkan ke tabel ===
+// === Tampilkan data ke tabel ===
 function tampilkanTabel(data) {
   const tbody = document.getElementById("data-leaderboard");
   tbody.innerHTML = "";
