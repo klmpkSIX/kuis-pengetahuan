@@ -1,7 +1,3 @@
-// === Konfigurasi Firebase ===
-firebase.initializeApp(firebaseConfig);
-}
-
 // === Ambil nama pengguna dan pelajaran ===
 const nama = localStorage.getItem("namaPengguna") || "Siswa";
 document.getElementById("nama-user").textContent = `Nama: ${nama}`;
@@ -182,4 +178,5 @@ function kembaliDashboard() {
 function lihatLeaderboard() {
   window.location.href = `leaderboard.html?pelajaran=${pelajaran}`;
 }
+
 
