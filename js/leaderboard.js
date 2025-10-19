@@ -1,8 +1,12 @@
 // === Konfigurasi Firebase ===
 const firebaseConfig = {
   apiKey: "AIzaSyCoPZ1se8vsj-ofFv-G4lXewKoC8shMfEA",
-  authDomain: "kuis-pengetahuan.firebaseapp.com",
-  projectId: "kuis-pengetahuan",
+  authDomain: "kuis-pengetahuan-9816c.firebaseapp.com",
+  projectId: "kuis-pengetahuan-9816c",
+  storageBucket: "kuis-pengetahuan-9816c.firebasestorage.app",
+  messagingSenderId: "635876306787",
+  appId: "1:635876306787:web:86e5a4487628f75ec6ad56",
+  measurementId: "G-T44R4GYSE5"
 };
 
 const app = firebase.initializeApp(firebaseConfig);
@@ -80,3 +84,4 @@ ambilLeaderboard();
 function kembali() {
   window.location.href = "index.html";
 }
+
