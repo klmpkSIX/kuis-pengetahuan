@@ -6,17 +6,26 @@ const pemainTerakhir = localStorage.getItem("namaPengguna") || null;
 
 // Ambil data dari Firestore
 function ambilLeaderboard() {
-  let query = db.collection("leaderboard").orderBy("skor", "desc").limit(10);
+  let query;
 
-  if (pelajaran !== "Semua Pelajaran") {
+  if (pelajaran && pelajaran !== "Semua Pelajaran") {
+    // tanpa orderBy untuk hindari error index
     query = db.collection("leaderboard")
       .where("pelajaran", "==", pelajaran)
+      .limit(10);
+  } else {
+    // kalau semua pelajaran, boleh urutkan
+    query = db.collection("leaderboard")
       .orderBy("skor", "desc")
       .limit(10);
   }
 
   query.get().then(snapshot => {
     const data = snapshot.docs.map(doc => doc.data());
+    // urutkan manual kalau pakai where
+    if (pelajaran && pelajaran !== "Semua Pelajaran") {
+      data.sort((a, b) => b.skor - a.skor);
+    }
     tampilkanLeaderboard(data);
   }).catch(err => {
     console.error("❌ Gagal ambil data leaderboard:", err);
@@ -53,3 +62,4 @@ ambilLeaderboard();
 function kembali() {
   window.location.href = "index.html";
 }
+
