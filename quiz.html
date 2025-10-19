@@ -7,21 +7,6 @@
   <title>Kuis Pengetahuan SD</title>
   <link rel="stylesheet" href="css/quiz.css" />
 </head>
-  <!-- Firebase SDK -->
-<script src="https://www.gstatic.com/firebasejs/10.14.0/firebase-app.js"></script>
-<script src="https://www.gstatic.com/firebasejs/10.14.0/firebase-firestore.js"></script>
-
-<script>
-  const firebaseConfig = {
-    apiKey: "AIzaSyCoPZ1se8vsj-ofFv-G4lXewKoC8shMfEA",
-    authDomain: "kuis-pengetahuan.firebaseapp.com",
-    projectId: "kuis-pengetahuan",
-  };
-
-  const app = firebase.initializeApp(firebaseConfig);
-  const db = firebase.firestore();
-</script>
-
 <body>
   <div class="quiz-container">
 
@@ -34,7 +19,6 @@
           <h2 id="timer">Waktu: 5:00</h2>
         </div>
       </div>
-      <!-- Pindahkan indikator ke sini -->
       <p id="indikator-soal" class="indikator-top"></p>
     </header>
 
@@ -62,12 +46,11 @@
   <audio id="suara-benar" src="audio/benar.mp3" preload="auto"></audio>
   <audio id="suara-salah" src="audio/salah.mp3" preload="auto"></audio>
 
-  <!-- Firebase v8 -->
-<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
-<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+  <!-- Firebase v8 (Kompatibel GitHub Pages) -->
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
 
+  <!-- File JS -->
   <script src="js/quiz.js" defer></script>
 </body>
-
 </html>
-
