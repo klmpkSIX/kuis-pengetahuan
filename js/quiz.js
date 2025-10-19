@@ -1,15 +1,5 @@
 // === Konfigurasi Firebase ===
-if (!firebase.apps.length) {
-  const firebaseConfig = {
-    apiKey: "AIzaSyCoPZ1sse8vsj-ofFv-G4lXewKoC8shfMEA",
-    authDomain: "kuis-pengetahuan-9816c.firebaseapp.com",
-    projectId: "kuis-pengetahuan-9816c",
-    storageBucket: "kuis-pengetahuan-9816c.appspot.com",
-    messagingSenderId: "635876306787",
-    appId: "1:635876306787:web:86e5a4487628f75ec6ad56",
-    measurementId: "G-T44R4GYSE5"
-  };
-  firebase.initializeApp(firebaseConfig);
+firebase.initializeApp(firebaseConfig);
 }
 
 // === Ambil nama pengguna dan pelajaran ===
@@ -192,3 +182,4 @@ function kembaliDashboard() {
 function lihatLeaderboard() {
   window.location.href = `leaderboard.html?pelajaran=${pelajaran}`;
 }
+
