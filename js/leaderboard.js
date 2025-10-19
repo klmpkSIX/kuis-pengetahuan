@@ -24,21 +24,34 @@ const judulPelajaran = document.getElementById("judul-pelajaran");
 judulPelajaran.textContent = pelajaran ? pelajaran.toUpperCase() : "SEMUA PELAJARAN";
 
 // === Fungsi ambil data dari Firestore ===
-async function ambilLeaderboard() {
-  let query = db.collection("leaderboard").orderBy("skor", "desc").limit(10);
+// === Ambil data leaderboard dari Firestore ===
+db.collection("leaderboard")
+  .orderBy("skor", "desc")
+  .limit(10)
+  .get()
+  .then(snapshot => {
+    const tbody = document.getElementById("data-leaderboard");
+    tbody.innerHTML = "";
 
-  if (pelajaran) {
-    query = db.collection("leaderboard")
-      .where("pelajaran", "==", pelajaran)
-      .orderBy("skor", "desc")
-      .limit(10);
-  }
+    snapshot.forEach((doc, index) => {
+      const data = doc.data();
+      const tr = document.createElement("tr");
 
-  const snapshot = await query.get();
-  const data = snapshot.docs.map(doc => doc.data());
+      let peringkat = index + 1;
+      let simbol = peringkat === 1 ? "🥇" : peringkat === 2 ? "🥈" : peringkat === 3 ? "🥉" : peringkat;
 
-  tampilkanTabel(data);
-}
+      tr.innerHTML = `
+        <td>${simbol}</td>
+        <td>${data.nama}</td>
+        <td><strong>${data.skor}</strong></td>
+        <td>${data.durasi || "-"}</td>
+      `;
+      tbody.appendChild(tr);
+    });
+  })
+  .catch(error => {
+    console.error("Gagal ambil data leaderboard:", error);
+  });
 
 // === Fungsi tampilkan data ke tabel ===
 function tampilkanTabel(data) {
@@ -84,4 +97,5 @@ ambilLeaderboard();
 function kembali() {
   window.location.href = "index.html";
 }
+
 
