@@ -84,21 +84,32 @@ tbody td {
 
 /* === Medali 3 besar === */
 tbody tr:first-child td:first-child {
-  color: #ffd700; /* emas */
-  font-weight: bold;
-  font-size: 1.2rem;
+  color: #ffca28; /* emas lebih gelap */
+  font-weight: 800;
+  font-size: 1.25rem;
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.6); /* agar kontras di background terang */
 }
 
 tbody tr:nth-child(2) td:first-child {
-  color: #c0c0c0; /* perak */
-  font-weight: bold;
+  color: #dcdcdc; /* perak */
+  font-weight: 700;
   font-size: 1.1rem;
+  text-shadow: 0 0 4px rgba(0, 0, 0, 0.6);
 }
 
 tbody tr:nth-child(3) td:first-child {
-  color: #cd7f32; /* perunggu */
-  font-weight: bold;
+  color: #d08c4b; /* perunggu hangat */
+  font-weight: 700;
   font-size: 1.05rem;
+  text-shadow: 0 0 4px rgba(0, 0, 0, 0.6);
+}
+
+/* Saat baris 1-3 di-hover, tetap kontras */
+tbody tr:first-child:hover td:first-child,
+tbody tr:nth-child(2):hover td:first-child,
+tbody tr:nth-child(3):hover td:first-child {
+  color: #fff5c3;
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.7);
 }
 
 /* === Highlight pemain terakhir === */
